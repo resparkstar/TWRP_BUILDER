@@ -14,11 +14,11 @@ on:
 
 env:
   MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni
-  DEVICE: CPH1861
-  DT_LINK: https://github.com/CPH1859/android_device_CPH1861_TWRP
-  DT_PATH: device/oppo/CPH1861
+  DEVICE: m33x
+  DT_LINK: https://github.com/xgodyt9/android-recovery-tree-m33
+  DT_PATH: device/samsung/m33x
   TARGET: recoveryimage
-  TZ: Asia/Kolkata
+  TZ: Europe/London
 
 jobs:
   build:
@@ -54,7 +54,7 @@ jobs:
        - name: Build
          run: |
               cd work
-              . build/envsetup.sh &&lunch omni_$DEVICE-eng &&export ALLOW_MISSING_DEPENDENCIES=true && mka $TARGET
+              . build/envsetup.sh && lunch omni_$DEVICE-eng && export ALLOW_MISSING_DEPENDENCIES=true && mka $TARGET
              
        - name: Release recovery image
          uses: softprops/action-gh-release@v1
@@ -64,5 +64,5 @@ jobs:
           tag_name: v0.1
           name: F2FS test
           files: | 
-            work/out/target/product/CPH1861/recovery.img
+            work/out/target/product/m33x/recovery.img
             
