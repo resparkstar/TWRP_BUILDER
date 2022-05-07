@@ -59,7 +59,7 @@ jobs:
        - name: Release recovery image
          uses: softprops/action-gh-release@v1
          env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: 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
          with:
           tag_name: v0.1
           name: F2FS test
